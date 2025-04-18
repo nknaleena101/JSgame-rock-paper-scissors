@@ -1,0 +1,38 @@
+body{
+    background-color: #FFD63A;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+h1{
+    text-align: center;
+}
+.hand{
+    
+}
+.handBtn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.js-result{
+    font-size: 24px;
+    font-weight: bold;
+}
+.movesImg, .hand{
+    width: 100px;
+}
+.players-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
