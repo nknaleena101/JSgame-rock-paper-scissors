@@ -53,7 +53,7 @@ function updateResult() {
 function updateMove(yourMove) {
   movesElement.innerHTML = 
   `<div class="movesDiv">
-  <img src="img/hand-${yourMove}.png" class="movesImg"> 
+  <img src="img/hand-${yourMove}.png" class="me"> 
   <img src="img/hand-${computerMove}.png" class="movesImg cpu">.
   </div>`;
 }
