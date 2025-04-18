@@ -51,7 +51,11 @@ function updateResult() {
   resultElement.innerHTML = `${result}.`;
 }
 function updateMove(yourMove) {
-  movesElement.innerHTML = `<img src="img/hand-${yourMove}.png" class="movesImg"><img src="img/hand-${computerMove}.png" class="movesImg">.`;
+  movesElement.innerHTML = 
+  `<div class="movesDiv">
+  <img src="img/hand-${yourMove}.png" class="movesImg"> 
+  <img src="img/hand-${computerMove}.png" class="movesImg cpu">.
+  </div>`;
 }
 function resetSandM() {
   movesElement.innerHTML = ``;

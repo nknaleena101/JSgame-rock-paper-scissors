@@ -1,3 +1,11 @@
+@keyframes rotateHand  {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(-20deg); }
+    50%  { transform: rotate(20deg); }
+    75%  { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+  }
+
 body{
     background-color: #FFD63A;
     font-family: Arial, Helvetica, sans-serif;
@@ -14,15 +22,16 @@ body{
     justify-content: space-evenly;
 }
 h1{
-    text-align: center;
-}
-.hand{
-    
+    text-align: center; 
 }
 .handBtn{
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+.handBtn:hover .hand {
+    animation: rotateHand 0.6s ease-in-out infinite;
+    transform-origin: center center;
 }
 .js-result{
     font-size: 24px;
@@ -31,8 +40,31 @@ h1{
 .movesImg, .hand{
     width: 100px;
 }
+.movesImg{
+    animation: rotateHand 0.6s ease-in-out;
+    transform-origin: top bottom;
+}
+.movesDiv{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
 .players-section{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+}
+.js-score{
+    font-size: 20px;
+}
+.resetBtn{
+    background-color: black;
+    color: #FFD63A;
+    border: none;
+    padding: 8px 16px;
+    font-size: 18px;
+    border-radius: 10px;
 }
