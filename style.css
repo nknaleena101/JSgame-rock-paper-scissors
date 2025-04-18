@@ -1,3 +1,12 @@
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+  }
+
 body{
     background-color: #FFD63A;
     font-family: Arial, Helvetica, sans-serif;
@@ -14,16 +23,17 @@ body{
     justify-content: space-evenly;
 }
 h1{
-    text-align: center;
-}
-.hand{
-    
+    text-align: center; 
 }
 .handBtn{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
+.handBtn:hover .hand {
+    animation: shake 0.5s;
+  }
 .js-result{
     font-size: 24px;
     font-weight: bold;
@@ -31,8 +41,27 @@ h1{
 .movesImg, .hand{
     width: 100px;
 }
+.movesDiv{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
 .players-section{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+}
+.js-score{
+    font-size: 20px;
+}
+.resetBtn{
+    background-color: black;
+    color: #FFD63A;
+    border: none;
+    padding: 8px 16px;
+    font-size: 18px;
+    border-radius: 10px;
 }
