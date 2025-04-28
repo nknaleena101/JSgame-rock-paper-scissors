@@ -1,6 +1,7 @@
 const scoreElement = document.querySelector(".js-score");
 const movesElement = document.querySelector(".js-moves");
 const resultElement = document.querySelector(".js-result");
+const autoRunElement = document.querySelector(".autoRun");
 
 let computerMove = "";
 let result = "";
@@ -61,6 +62,33 @@ function resetSandM() {
   movesElement.innerHTML = ``;
   resultElement.innerHTML = ``;
 }
+
+let isAutoRun = false;
+let intervalId;
+
+function autoRun(){
+  if(!isAutoRun){
+    intervalId = setInterval(function() {
+      const moves = ["Rock", "paper", "Scissors"];
+      const randomIndex = Math.floor(Math.random()*3);
+      const playerMove = moves[randomIndex];
+  
+      pickComputerMove();
+      playGame(playerMove);
+      pickResult(playerMove);
+    }, 1000);
+    isAutoRun = true;
+  } else{
+    clearInterval(intervalId);
+    isAutoRun = false;
+  }
+  if(isAutoRun){
+    autoRunElement.innerHTML = "Stop autoRun";
+  }else{
+    autoRunElement.innerHTML = "Start autoRun"
+  }
+}
+
 function playGame(playerMove) {
   if (playerMove === "Rock") {
     if (computerMove == "Rock") {
