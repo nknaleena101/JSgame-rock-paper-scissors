@@ -76,7 +76,7 @@ h1{
 .js-score{
     font-size: 20px;
 }
-.resetBtn{
+.resetBtn, .autoRun{
     background-color: black;
     color: #FFD63A;
     border: none;
