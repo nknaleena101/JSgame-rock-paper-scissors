@@ -68,7 +68,7 @@ let intervalId;
 
 function autoRun(){
   if(!isAutoRun){
-    intervalId = setInterval(function() {
+    intervalId = setInterval(() => {
       const moves = ["Rock", "paper", "Scissors"];
       const randomIndex = Math.floor(Math.random()*3);
       const playerMove = moves[randomIndex];
