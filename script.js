@@ -2,6 +2,10 @@ const scoreElement = document.querySelector(".js-score");
 const movesElement = document.querySelector(".js-moves");
 const resultElement = document.querySelector(".js-result");
 const autoRunElement = document.querySelector(".autoRun");
+const rockBtn = document.querySelector(".rockBtn");
+const paperBtn = document.querySelector(".paperBtn");
+const scissorsBtn = document.querySelector(".scissorsBtn");
+const resetBtn = document.querySelector(".resetBtn");
 
 let computerMove = "";
 let result = "";
@@ -125,25 +129,22 @@ function playGame(playerMove) {
   }
 }
 
-function rock() {
+rockBtn.addEventListener("click", () => {
   pickComputerMove();
   playGame("Rock");
   pickResult("Rock");
-}
-
-function paper() {
+})
+paperBtn.addEventListener("click", ()=>{
   pickComputerMove();
   playGame("Paper");
   pickResult("Paper");
-}
-
-function scissors() {
+})
+scissorsBtn.addEventListener("click", ()=>{
   pickComputerMove();
   playGame("Scissors");
   pickResult("Scissors");
-}
-
-function reset() {
+})
+resetBtn.addEventListener("click", () => {
   score.wins = 0;
   score.loses = 0;
   score.ties = 0;
@@ -151,4 +152,4 @@ function reset() {
   updateScoreElement();
   console.log("reset score");
   localStorage.removeItem("score");
-}
+})
